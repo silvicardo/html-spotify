@@ -24,6 +24,7 @@ MAIN CONTAINERS
 
 .player {
   display: flex;
+  overflow: hidden;
 }
 
 
@@ -76,9 +77,10 @@ SIDEBAR
   margin: 0;
   height:calc(100vh - 100px);
   width: calc(100vw - 200px);
-  background: red;
+  overflow-y: auto;
+  background: black;
   color: black;
-  background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20id%3D%22Layer_1%22%20style%3D%22e….891-0.579%201.891-1.514%200-0.984-0.71-1.511-1.89-1.511z%22/%3E%3C/svg%3E);
+background-image: linear-gradient(to bottom right, red , blue);
 }
 
 .player_controls {
@@ -135,8 +137,13 @@ CONTENT AREA
 
 ***********************************/
 
+
 .mobile_nav {
+  position: fixed;
+  top:0;
+  left: 0;
   height: 80px;
+  width: 100%;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
@@ -162,12 +169,78 @@ CONTENT AREA
 }
 
 .content_body {
+
   overflow-y: hidden;
-  background: white;
+  margin-top: 80px;
+  padding: 0 30px;
+  /* background: white; */
+}
+
+.content_body > h1 {
+  color:white;
+  font-weight: bold;
+}
+
+.content_body .categories {
+  display: inline-block;
+  overflow-x: auto;
+  text-transform: uppercase;
+  /* border-bottom: 1px solid grey; */
+}
+
+.content_body .categories h3 {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.content_body .categories h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+.content_body .suggestedMixes h2 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+  border-bottom: 1px solid grey;
+}
+
+.suggestedMixes .mixes_container {
+  display: flex;
+  /* background: white; */
+}
+
+.mix_item:not(:last-child)  {
+  margin-right: 30px
+}
+
+.mix_item img {
+  max-width: 100%;
 }
 
 
+@media  all and (max-width: 1099px) {
 
+  .suggestedMixes .mixes_container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* background: white; */
+  }
+
+
+  .mix_item:not(:last-child)  {
+    margin-right: 0
+  }
+  .mix_item {
+    margin-bottom: 20px;
+    background: yellow;
+  }
+
+}
 /***********************************
 
 PLAYER CONTROLS
