@@ -39,7 +39,6 @@ SIDEBAR
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   height: calc(100vh - 100px);
   width: 200px;
   padding: 25px;
@@ -59,12 +58,16 @@ SIDEBAR
 }
 
 .sidebar_options {
+  min-height: 200px;
+  max-height: 500px;
   overflow-y: auto;
   margin-bottom: 25px;
   width: 100%;
+  background: blue;
 }
 
 .sidebar_account {
+  background: yellow;
   text-align: center;
   height: 100px;
   width:100%;
@@ -80,7 +83,7 @@ SIDEBAR
   overflow-y: auto;
   background: black;
   color: black;
-background-image: linear-gradient(to bottom right, red , blue);
+  background-image: linear-gradient(to bottom right, red , blue);
 }
 
 .player_controls {
@@ -92,9 +95,10 @@ background-image: linear-gradient(to bottom right, red , blue);
 @media all and (max-height: 599px), all and (max-width: 991px) {
 
   .side_bar {
+    justify-content: flex-start;
     width:100px;
     padding: 25px 10px 20px 10px;
-    overflow: hidden
+    overflow-y: hidden;
   }
 
   .side_bar > img.logoImgLg {
@@ -111,6 +115,7 @@ background-image: linear-gradient(to bottom right, red , blue);
 
   .sidebar_options {
     margin: 0;
+    overflow-y: auto;
   }
 
   .sidebar_account {
@@ -252,10 +257,37 @@ PLAYER CONTROLS
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+}
+
+.player_controls .control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .player_controls img {
   height: 60px;
+}
+
+.player_controls i {
+  display: inline-block;
+  color: white;
+}
+
+.playCircle {
+  position:relative;
+  border: 1px solid white;
+  width:40px;
+  height: 40px;
+  border-radius: 100%;
+  display: inline-block;
+}
+.player_controls i.fa-play{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 @media all and (max-width: 991px) {
