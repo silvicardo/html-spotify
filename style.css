@@ -102,6 +102,7 @@ SIDEBAR
 
 .side_bar .sidebar_options .latest_artists li {
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .sidebar_account {
