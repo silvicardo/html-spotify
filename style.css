@@ -18,7 +18,7 @@ MAIN CONTAINERS
 .app_cnt {
   width: 100vw;
   height: 100vh;
-  background: cyan;
+  background: #282828;
   margin: 0;
 }
 
@@ -84,6 +84,7 @@ SIDEBAR
   background: black;
   color: black;
   background-image: linear-gradient(to bottom right, red , blue);
+
 }
 
 .player_controls {
@@ -154,7 +155,7 @@ CONTENT AREA
   justify-content: space-between;
   align-items: center;
   background: black;
-  /* display:none; */
+  z-index: 1;
 }
 
 .mobile_nav img.nav_logo {
@@ -190,6 +191,7 @@ CONTENT AREA
   display: inline-block;
   overflow-x: auto;
   text-transform: uppercase;
+  /* background: red; */
   /* border-bottom: 1px solid grey; */
 }
 
@@ -215,17 +217,70 @@ CONTENT AREA
 
 .suggestedMixes .mixes_container {
   display: flex;
-  /* background: white; */
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* mix-item single card */
+
+.mix_item {
+  display: flex;
+  flex-direction: column;
+  max-width: 230px;
+  /* background: black; */
+}
+
+
+.mix_header {
+  position: relative;
+}
+
+
+.mix_header a:hover:after{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 50px;
+  cursor:pointer;
+  color: white;
+  content: "\f144";
+}
+
+
+.mix_item img {
+  max-width: 100%;
+}
+
+.mix_header img:hover {
+  transition: 0.3s linear;
+  opacity: 0.5;
 }
 
 .mix_item:not(:last-child)  {
   margin-right: 30px
 }
 
-.mix_item img {
-  max-width: 100%;
+.mix_item, .mix_item a {
+  color: white;
 }
 
+.mix_item .mix_body .mix_title {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.mix_item .mix_body .mix_artists {
+  font-size: 12px;
+  color: grey
+}
 
 @media  all and (max-width: 1099px) {
 
@@ -233,13 +288,14 @@ CONTENT AREA
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    /* background: white; */
+    background: grey;
   }
 
 
   .mix_item:not(:last-child)  {
     margin-right: 0
   }
+
   .mix_item {
     margin-bottom: 20px;
     background: yellow;
