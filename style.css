@@ -62,12 +62,14 @@ SIDEBAR
 .side_bar > img.logoImgLg {
   width: 150px;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .side_bar > img.logoImgSm {
   display: none;
   width: 60px;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .sidebar_options {
@@ -76,7 +78,6 @@ SIDEBAR
   overflow: hidden;
   margin-bottom: 25px;
   width: 100%;
-  /* background: blue; */
 }
 
 .sidebar_options * {
@@ -105,7 +106,6 @@ SIDEBAR
 
 .sidebar_account {
   padding: 20px 0px;
-  /* background: grey; */
   width:100%;
 }
 
@@ -123,6 +123,11 @@ SIDEBAR
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid white;
+}
+
+.side_bar i:hover, .side_bar .sidebar_options li:hover,
+.side_bar .sidebar_options li a span:hover   {
+  color: grey;
 }
 
 @media all and (max-height: 800px) {
@@ -197,7 +202,6 @@ CONTENT AREA
 
 ***********************************/
 
-
 .mobile_nav {
   position: fixed;
   top:0;
@@ -232,7 +236,6 @@ CONTENT AREA
   overflow-y: hidden;
   margin-top: 80px;
   padding: 0 30px;
-  /* background: white; */
 }
 
 .content_body > h1 {
@@ -244,8 +247,6 @@ CONTENT AREA
   display: inline-block;
   overflow-x: auto;
   text-transform: uppercase;
-  /* background: red; */
-  /* border-bottom: 1px solid grey; */
 }
 
 .content_body .categories h3 {
@@ -281,7 +282,6 @@ CONTENT AREA
   display: flex;
   flex-direction: column;
   max-width: 230px;
-  /* background: black; */
 }
 
 .mix_header {
@@ -323,14 +323,14 @@ CONTENT AREA
 }
 
 .mix_item .mix_body .mix_title {
-display: block;
-margin-bottom: 10px;
-font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .mix_item .mix_body .mix_artists {
   font-size: 12px;
-  color: grey
+  color: grey;
 }
 
 @media  all and (max-width: 1099px) {
@@ -339,7 +339,6 @@ font-weight: bold;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: grey;
   }
 
 
@@ -349,7 +348,6 @@ font-weight: bold;
 
   .mix_item {
     margin-bottom: 20px;
-    background: yellow;
   }
 
 }
@@ -377,6 +375,10 @@ PLAYER CONTROLS
 
 .player_controls i:not(.fa-play) {
   font-size: 20px;
+}
+
+.player_controls i:hover {
+  color: grey
 }
 
 .player_controls .control.now_playing *:not(:last-child),
@@ -443,6 +445,12 @@ PLAYER CONTROLS
 
 .player_controls .control.volume_and_speakers .progress_bar .bar {
   width: 80px;
+}
+
+.player_controls .control .progress_bar .bar:before{
+  width:50px;
+  height:35px;
+  background: red;
 }
 
 .player_controls .control .progress_bar .bar .dot {
