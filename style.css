@@ -27,14 +27,6 @@ MAIN CONTAINERS
   overflow: hidden;
 }
 
-
-/***********************************
-
-SIDEBAR
-
-***********************************/
-
-
 .side_bar {
   display: flex;
   flex-direction: column;
@@ -44,36 +36,6 @@ SIDEBAR
   padding: 25px;
   background-color: black;
   color: white;
-}
-
-.side_bar > img.logoImgLg {
-  width: 150px;
-  margin-bottom: 25px;
-}
-
-.side_bar > img.logoImgSm {
-  display: none;
-  width: 60px;
-  margin-bottom: 25px;
-}
-
-.sidebar_options {
-  min-height: 200px;
-  max-height: 500px;
-  overflow-y: auto;
-  margin-bottom: 25px;
-  width: 100%;
-  background: blue;
-}
-
-.sidebar_account {
-  background: yellow;
-  text-align: center;
-  height: 100px;
-  width:100%;
-}
-.sidebar_account i{
-  display: block
 }
 
 .content_area {
@@ -93,10 +55,94 @@ SIDEBAR
   width:100%;
 }
 
-@media all and (max-height: 599px), all and (max-width: 991px) {
+
+/***********************************
+
+SIDEBAR
+
+***********************************/
+
+
+
+
+.side_bar > img.logoImgLg {
+  width: 150px;
+  margin-bottom: 25px;
+}
+
+.side_bar > img.logoImgSm {
+  display: none;
+  width: 60px;
+  margin-bottom: 25px;
+}
+
+.sidebar_options {
+  min-height: 200px;
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  width: 100%;
+  /* background: blue; */
+}
+
+.sidebar_options * {
+  color: white;
+}
+
+.side_bar .sidebar_options .main_functionalities li {
+  font-size: 20px;
+}
+
+.side_bar .sidebar_options li {
+  margin-bottom: 20px;
+}
+
+.side_bar .sidebar_options i.fas, .side_bar .sidebar_account i.fas {
+  margin-right: 10px;
+}
+
+
+.side_bar .sidebar_options .latest_artists {
+  overflow: auto;
+}
+
+.side_bar .sidebar_options .latest_artists li {
+  margin-left: 15px;
+}
+
+.sidebar_account {
+  padding: 20px 0px;
+  /* background: grey; */
+  width:100%;
+}
+
+.side_bar .sidebar_account i.fas {
+  font-size: 22px;
+}
+.sidebar_account span {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.sidebar_account span:not(:last-of-type) {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+@media all and (max-height: 800px) {
+
+  .side_bar .sidebar_options .latest_artists {
+    display: none;
+  }
+
+}
+@media all and (max-height: 600px), all and (max-width: 991px) {
 
   .side_bar {
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     width:100px;
     padding: 25px 10px 20px 10px;
     overflow-y: hidden;
@@ -116,16 +162,29 @@ SIDEBAR
 
   .sidebar_options {
     margin: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
+    text-align: center;
   }
 
-  .sidebar_account {
+  .side_bar .sidebar_options li {
+    margin-bottom: 20px;
+  }
+
+  .side_bar .sidebar_options li a span {
+  display: none;
+  }
+  .side_bar .sidebar_options i.fas {
+    font-size: 35px;
+    margin-right: 0;
+  }
+
+  .sidebar_account{
     display: none;
   }
 
 }
 
-@media all and (max-height: 450px), all and (max-width: 768px) {
+@media all and (max-height: 550px), all and (max-width: 768px) {
 
   .side_bar {
     display: none;
@@ -166,7 +225,7 @@ CONTENT AREA
   height: 25px;
 }
 
-@media all and (min-height: 451px) and (min-width: 769px) {
+@media all and (min-height: 551px) and (min-width: 769px) {
 
   .mobile_nav {
     display: none;
