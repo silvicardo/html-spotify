@@ -8,7 +8,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
 /***********************************
 
 MAIN CONTAINERS
@@ -46,7 +45,6 @@ MAIN CONTAINERS
   background: black;
   color: black;
   background-image: linear-gradient(to bottom right, red , blue);
-
 }
 
 .player_controls {
@@ -55,15 +53,11 @@ MAIN CONTAINERS
   width:100%;
 }
 
-
 /***********************************
 
 SIDEBAR
 
 ***********************************/
-
-
-
 
 .side_bar > img.logoImgLg {
   width: 150px;
@@ -101,7 +95,6 @@ SIDEBAR
   margin-right: 10px;
 }
 
-
 .side_bar .sidebar_options .latest_artists {
   overflow: auto;
 }
@@ -119,6 +112,7 @@ SIDEBAR
 .side_bar .sidebar_account i.fas {
   font-size: 22px;
 }
+
 .sidebar_account span {
   display: flex;
   justify-content: space-between;
@@ -138,6 +132,7 @@ SIDEBAR
   }
 
 }
+
 @media all and (max-height: 600px), all and (max-width: 991px) {
 
   .side_bar {
@@ -178,7 +173,7 @@ SIDEBAR
     margin-right: 0;
   }
 
-  .sidebar_account{
+  .sidebar_account, .sidebar_options .latest_artists{
     display: none;
   }
 
@@ -234,7 +229,6 @@ CONTENT AREA
 }
 
 .content_body {
-
   overflow-y: hidden;
   margin-top: 80px;
   padding: 0 30px;
@@ -260,6 +254,7 @@ CONTENT AREA
   font-size: 13px;
   font-weight: bold;
 }
+
 .content_body .categories h3 a {
   color: white;
   text-decoration: none;
@@ -289,11 +284,9 @@ CONTENT AREA
   /* background: black; */
 }
 
-
 .mix_header {
   position: relative;
 }
-
 
 .mix_header a:hover:after{
   position: absolute;
@@ -311,7 +304,6 @@ CONTENT AREA
   color: white;
   content: "\f144";
 }
-
 
 .mix_item img {
   max-width: 100%;
@@ -361,6 +353,7 @@ font-weight: bold;
   }
 
 }
+
 /***********************************
 
 PLAYER CONTROLS
@@ -376,8 +369,31 @@ PLAYER CONTROLS
 }
 
 .player_controls .control {
+  position: relative;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.player_controls i:not(.fa-play) {
+  font-size: 20px;
+}
+
+.player_controls .control.now_playing *:not(:last-child),
+.player_controls .control.volume_and_speakers a:not(:last-child), .player_controls .control.player-commands .buttons a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.player_controls .control.player-commands {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player_controls .control.player-commands .buttons {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -398,6 +414,7 @@ PLAYER CONTROLS
   border-radius: 100%;
   display: inline-block;
 }
+
 .player_controls i.fa-play{
   position:absolute;
   top: 50%;
@@ -405,10 +422,50 @@ PLAYER CONTROLS
   transform: translate(-50%,-50%);
 }
 
+.player_controls .control.player-commands .progress_bar {
+  margin-top: 10px;
+}
+
+.player_controls .control .progress_bar .bar {
+  position:relative;
+  display: inline-block;
+  height: 5px;
+  margin-right: 15px;
+  background: white;
+  border-radius: 5px;
+  background: green;
+}
+
+.player_controls .control.player-commands .progress_bar .bar {
+  margin-left: 15px;
+  width: 220px;
+}
+
+.player_controls .control.volume_and_speakers .progress_bar .bar {
+  width: 80px;
+}
+
+.player_controls .control .progress_bar .bar .dot {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 15px;
+height: 15px;
+border-radius: 100%;
+overflow: hidden;
+background: white;
+}
+
 @media all and (max-width: 991px) {
 
  .player_controls .volume_and_speakers {
     display: none;
+  }
+
+  .player_controls {
+    flex-direction: row-reverse;
+    justify-content: space-around;
   }
 
 }
