@@ -107,8 +107,23 @@ SIDEBAR
   font-size: 20px;
 }
 
-.sidebar_options ul.main_functionalities li:hover a span, .sidebar_options ul.main_functionalities li:hover i, .sidebar_options .latest_artists li:hover  {
+.sidebar_options .latest_artists li a span {
+  margin-top: 3px;
+  font-size: 9px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.sidebar_options ul.main_functionalities li:hover a span, .sidebar_options ul.main_functionalities li:hover i {
   color: grey;
+}
+
+.sidebar_options .latest_artists li:hover a {
+transition: 0.3s;
+  color: grey;
+}
+.sidebar_options .latest_artists li:hover a span  {
+  color: white;
 }
 
 .sidebar_options i.fas, .sidebar_account i.fas {
@@ -144,7 +159,7 @@ SIDEBAR
   color: grey;
 }
 
-.sidebar_account span:hover i{
+.sidebar_account span:hover i {
 transition: 0.5s;
 font-size: 25px;
 }
