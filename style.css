@@ -375,6 +375,11 @@ PLAYER CONTROLS
 
 ***********************************/
 
+
+.dot, .bar {
+  cursor: pointer;
+}
+
 .player_controls {
   padding: 0 40px;
   display: flex;
@@ -452,7 +457,7 @@ PLAYER CONTROLS
   margin-right: 15px;
   background: white;
   border-radius: 5px;
-  background: green;
+  background: white;
 }
 
 .player_controls .control.player-commands .progress_bar .bar {
@@ -460,14 +465,27 @@ PLAYER CONTROLS
   width: 220px;
 }
 
+.player_controls .control.player-commands .progress_bar .bar .bar_portion.elapsed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height:5px;
+  background: green;
+}
+
 .player_controls .control.volume_and_speakers .progress_bar .bar {
   width: 80px;
 }
 
-.player_controls .control .progress_bar .bar:before{
-  width:50px;
-  height:35px;
-  background: red;
+.player_controls .control.volume_and_speakers .progress_bar .bar .bar_portion.elapsed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height:5px;
+    background: green;
+
 }
 
 .player_controls .control .progress_bar .bar .dot {
