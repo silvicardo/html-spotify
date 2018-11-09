@@ -8,6 +8,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+a, a:hover {
+  text-decoration: none;
+}
+
+a, i, .dot, .bar, li {
+  cursor: pointer;
+}
+
 /***********************************
 
 MAIN CONTAINERS
@@ -59,6 +67,8 @@ SIDEBAR
 
 ***********************************/
 
+
+/* Sidebar Top Images  */
 .side_bar > img.logoImgLg {
   width: 150px;
   margin-bottom: 25px;
@@ -72,6 +82,11 @@ SIDEBAR
   cursor: pointer;
 }
 
+/* Sidebar Options
+    - main_functionalities
+    - latest_artists
+*/
+
 .sidebar_options {
   min-height: 200px;
   max-height: 500px;
@@ -84,33 +99,38 @@ SIDEBAR
   color: white;
 }
 
-.side_bar .sidebar_options .main_functionalities li {
-  font-size: 20px;
-}
-
-.side_bar .sidebar_options li {
+.sidebar_options li {
   margin-bottom: 20px;
 }
 
-.side_bar .sidebar_options i.fas, .side_bar .sidebar_account i.fas {
+.sidebar_options .main_functionalities li {
+  font-size: 20px;
+}
+
+.sidebar_options ul.main_functionalities li:hover a span, .sidebar_options ul.main_functionalities li:hover i, .sidebar_options .latest_artists li:hover  {
+  color: grey;
+}
+
+.sidebar_options i.fas, .sidebar_account i.fas {
   margin-right: 10px;
 }
 
-.side_bar .sidebar_options .latest_artists {
+.sidebar_options .latest_artists {
   overflow: auto;
 }
 
-.side_bar .sidebar_options .latest_artists li {
+.sidebar_options .latest_artists li {
   margin-left: 15px;
-  cursor: pointer;
 }
+
+/* Sidebar Account */
 
 .sidebar_account {
   padding: 20px 0px;
   width:100%;
 }
 
-.side_bar .sidebar_account i.fas {
+.sidebar_account i.fas {
   font-size: 22px;
 }
 
@@ -120,15 +140,19 @@ SIDEBAR
   padding-left: 5px;
 }
 
+.sidebar_account span:hover, .sidebar_account span:hover i {
+  color: grey;
+}
+
+.sidebar_account span:hover i{
+transition: 0.5s;
+font-size: 25px;
+}
+
 .sidebar_account span:not(:last-of-type) {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid white;
-}
-
-.side_bar i:hover, .side_bar .sidebar_options li:hover,
-.side_bar .sidebar_options li a span:hover   {
-  color: grey;
 }
 
 @media all and (max-height: 800px) {
@@ -174,6 +198,7 @@ SIDEBAR
   .side_bar .sidebar_options li a span {
   display: none;
   }
+
   .side_bar .sidebar_options i.fas {
     font-size: 35px;
     margin-right: 0;
@@ -260,7 +285,6 @@ CONTENT AREA
 .content_body .categories  h3 a {
   position: relative;
   color: white;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -317,7 +341,6 @@ CONTENT AREA
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 50px;
-  cursor:pointer;
   color: white;
   content: "\f144";
 }
@@ -376,9 +399,6 @@ PLAYER CONTROLS
 ***********************************/
 
 
-.dot, .bar {
-  cursor: pointer;
-}
 
 .player_controls {
   padding: 0 40px;
