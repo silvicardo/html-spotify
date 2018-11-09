@@ -329,7 +329,7 @@ CONTENT AREA
   position: relative;
 }
 
-.mix_header a:hover:after{
+.mix_header a::after {
   position: absolute;
   top:50%;
   left: 50%;
@@ -340,7 +340,7 @@ CONTENT AREA
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 50px;
+  font-size: 0px;
   color: white;
   content: "\f144";
 }
@@ -349,9 +349,14 @@ CONTENT AREA
   max-width: 100%;
 }
 
-.mix_header img:hover {
+.mix_header:hover a {
   transition: 0.3s linear;
   opacity: 0.5;
+}
+
+.mix_header:hover a::after {
+  transition: 0.3s linear;
+  font-size: 50px;
 }
 
 .mix_item:not(:last-child)  {
