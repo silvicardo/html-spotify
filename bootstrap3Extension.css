@@ -24,7 +24,7 @@ BOOTSTRAP 3 BREAKPOINTS
 
 */
 
-
+/* GENERAL RULES */
 * {
   margin: 0;
   padding: 0;
@@ -40,8 +40,232 @@ li {
   list-style: none;
 }
 
+/********** FLEXBOX **********/
 
-/* MARGINS */
+/* FLEXBOX --> Flex Container properties */
+
+.flex_cnt {
+  display: flex; /* inline-flex*/
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  flex-grow: 1; /* can't grow */
+  flex-shrink: 1; /* can shrink*/
+}
+
+.flex_cnt.fd_row {
+  flex-direction: row;
+}
+.flex_cnt.fd_rowReverse {
+  flex-direction: row-reverse;
+}
+.flex_cnt.fd_column {
+  flex-direction: column;
+}
+.flex_cnt.fd_columnReverse {
+  flex-direction: column-reverse;
+}
+
+.flex_cnt.wrap {
+  /* multiple lines */
+  flex-wrap: wrap;
+}
+
+.flex_cnt.justifyContent_start {
+  justify-content: flex-start;
+}
+.flex_cnt.justifyContent_end {
+  justify-content: flex-end;
+}
+.flex_cnt.justifyContent_center {
+  justify-content: center;
+}
+.flex_cnt.justifyContent_spaceBetween {
+  justify-content: space-between;
+}
+.flex_cnt.justifyContent_spaceAround {
+  justify-content: space-around;
+}
+
+.flex_cnt.alignItems_start {
+  align-items: flex-start;
+}
+.flex_cnt.alignItems_end {
+  align-items: flex-end;
+}
+.flex_cnt.alignItems_center {
+  align-items: center;
+}
+.flex_cnt.alignItems_stretch{
+  align-items: stretch;
+}
+.flex_cnt.alignItems_baseline {
+  align-items: baseline;
+}
+
+/* Combinations .flex_cnt.(mainAxis)_(crossAxis) */
+
+.flex_cnt.center_center {
+  justify-content: center;
+  align-items: center;
+}
+.flex_cnt.center_start {
+  justify-content: center;
+  align-items: flex-start;
+}
+.flex_cnt.center_end {
+  justify-content: center;
+  align-items: flex-end;
+}
+.flex_cnt.center_stretch {
+  justify-content: center;
+  align-items: stretch;
+}
+.flex_cnt.center_baseline {
+  justify-content: center;
+  align-items: baseline;
+}
+
+.flex_cnt.end_center {
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex_cnt.end_start {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.flex_cnt.end_end {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.flex_cnt.end_stretch {
+  justify-content: flex-end;
+  align-items: stretch;
+}
+.flex_cnt.end_baseline {
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+/* Responsive Flex Rules */
+
+ /* Rules applieas at and below breakpoint
+ value.flex_cnt.wrap-(breakpoint) */
+
+@media all and (max-width: 767px /*sm*/){
+
+  .flex_cnt.wrap-sm {
+    flex-wrap: wrap;
+  }
+  .flex_cnt.fd_column-sm {
+    flex-direction: column;
+  }
+  .flex_cnt.fd_row-sm {
+    flex-direction: row;
+  }
+
+}
+
+@media all and (max-width: 991px /*md*/) {
+
+  .flex_cnt.wrap_onAndUnder_md {
+    flex-wrap: wrap;
+  }
+  .flex_cnt.fd_column_onAndUnder_md {
+    flex-direction: column;
+  }
+  .flex_cnt.fd_row_onAndUnder_md {
+    flex-direction: row;
+  }
+
+}
+
+@media all and (max-width: 1199px /*lg*/) {
+
+  .flex_cnt.wrap_onAndUnder_lg {
+    flex-wrap: wrap;
+  }
+  .flex_cnt.fd_column_onAndUnder_lg {
+    flex-direction: column;
+  }
+  .flex_cnt.fd_row_onAndUnder_lg {
+    flex-direction: row;
+  }
+
+}
+
+/*  ALIGN CONTENT PROPERTIES
+
+This aligns a flex container's lines
+within when there is extra space in the
+cross-axis, similar to how justify-content
+aligns individual items within the main-axis.
+
+Note: this property has no effect when there
+is only one line of flex items. */
+
+.flex_cnt.alignContent_start {
+  align-content: flex-start;
+}
+.flex_cnt.alignContent_end {
+  align-content: flex-end;
+}
+.flex_cnt.alignContent_center {
+  align-content: center;
+}
+.flex_cnt.alignContent_stretch {
+  align-content: stretch;
+}
+.flex_cnt.alignContent_spaceBetween {
+  align-content: space-between;
+}
+.flex_cnt.alignContent_spaceAround {
+  align-content: space-around;
+}
+
+/* FLEXBOX ---> Flex Container Children Properties */
+
+.flex_item {
+  flex-grow: 1; /* can't grow*/
+  flex-shrink: 1; /* can shrink*/
+}
+
+.flex_item.canGrowUpTo2 {
+  flex-grow: 2;
+}
+.flex_item.canGrowUpTo3 {
+  flex-grow: 3;
+}
+
+.flex_item.noShrink {
+  flex-shrink: 0;
+}
+
+/*   AlignSelf :
+This allows the default alignment
+(or the one specified by align-items)
+ to be overridden for individual flex items.  */
+
+.flex_item.alignSelf_start {
+  align-self: flex-start;
+}
+.flex_item.alignSelf_end {
+  align-self: flex-end;
+}
+.flex_item.alignSelf_baseline {
+  align-self: baseline;
+}
+.flex_item.alignSelf_center {
+  align-self: center;
+}
+.flex_item.alignSelf_stretch {
+  align-items: stretch;
+}
+
+/* <------ FlexBox Ends Here ------> */
+
+/* MARGIN */
 
 .margin_full_10 {
   margin: 10px;
@@ -505,7 +729,7 @@ li {
   padding-right: 100px;
 }
 
-/* POSITION  AND DISPLAY*/
+/* POSITION*/
 
 .positionFixed_topLeft0z1 {
   position: fixed;
@@ -513,11 +737,9 @@ li {
   left: 0;
   z-index: 1;
 }
-
 .positionRelative {
   position:relative;
 }
-
 .positionAbsolute_topLeft {
   position: absolute;
   top:0;
@@ -557,23 +779,29 @@ li {
   right: 0;
 }
 
+/* DISPLAY */
 
+/* Use .flex_row for display: flex */
+.display_block {
+  display: block;
+}
 .display_inline {
   display: inline;
 }
-
 .display_inlineBlock {
   display: inline-block;
 }
 
+/* MAX-WIDTH */
+
 .max_width_50 {
   max-width: 50%;
 }
-
 .max_width_100 {
   max-width: 100%;
 }
 
+/* WIDTH/HEIGHT PIXELS */
 .w10px {
   width: 10px;
 }
@@ -636,6 +864,8 @@ li {
   height: 100px;
 }
 
+/* LINE HEIGHT */
+
 .lineHeight_10px {
   line-height: 10px;
 }
@@ -666,6 +896,7 @@ li {
 .lineHeight_100px {
   line-height: 100px;
 }
+
 /* BACKGROUNDS */
 
 .bg_red {
@@ -680,13 +911,17 @@ li {
 .bg_yellow {
   background: yellow;
 }
-
 .bg_aqua {
   background-color: #17B491;
 }
-
 .bg_white {
   background:white;
+}
+.bg_blue {
+  background: blue;
+}
+.bg_lightCoral {
+  background: lightcoral;
 }
 
 /* TEXT */
@@ -694,19 +929,15 @@ li {
 .black_text {
   color: black;
 }
-
 .white_text {
   color: white;
 }
-
 .red_text {
   color: red;
 }
-
 .yellow_text {
   color:yellow;
 }
-
 .blue_text {
   color: blue;
 }

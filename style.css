@@ -329,7 +329,7 @@ CONTENT AREA
 .suggestedMixes .mixes_container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 /* mix-item single card */
